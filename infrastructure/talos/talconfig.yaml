@@ -1,0 +1,39 @@
+clusterName: onepiece
+talosVersion: v1.3.4
+kubernetesVersion: v1.26.1
+endpoint: https://onepiece.home.local:6443
+allowSchedulingOnMasters: true
+additionalMachineCertSans:
+  - onepiece.home.local
+  - 192.168.0.10
+additionalApiServerCertSans:
+  - 192.168.0.10
+nodes:
+  - hostname: zoro.home.local
+    ipAddress: 192.168.1.200
+    installDisk: /dev/sda
+    controlPlane: true
+    disableSearchDomain: true
+    networkInterfaces:
+      - interface: eth0
+        mtu: 0
+        dhcp: true
+        vip:
+          ip: 192.168.0.10
+  - hostname: sanji.home.local
+    ipAddress: 192.168.1.201
+    installDisk: /dev/sda
+    controlPlane: false
+    disableSearchDomain: true
+    networkInterfaces:
+      - interface: eth0
+        mtu: 0
+        dhcp: true
+controlPlane:
+  patches:
+    - |-
+      - op: add
+        path: /machine/kubelet/extraArgs
+        value:
+          feature-gates: GracefulNodeShutdown=true,MixedProtocolLBService=true
+          rotate-server-certificates: "true"
