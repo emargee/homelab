@@ -29,7 +29,7 @@ resources:
   # - ./kubernetes-dashboard.yaml
   # - ./external-secrets.yaml
   # - ./bitnami-charts.yaml
-  # - ./postfinance.yaml
+   - ./postfinance.yaml
   # - ./backube-charts.yaml
   # - ./piraeus.yaml
   # - ./enix-charts.yaml
