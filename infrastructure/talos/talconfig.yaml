@@ -2,6 +2,8 @@ clusterName: onepiece
 talosVersion: v1.3.4
 kubernetesVersion: v1.26.1
 endpoint: https://onepiece.home.local:6443
+cniConfig:
+  name: none
 allowSchedulingOnMasters: true
 additionalMachineCertSans:
   - onepiece.home.local
@@ -23,12 +25,14 @@ nodes:
   - hostname: sanji.home.local
     ipAddress: 192.168.1.201
     installDisk: /dev/sda
-    controlPlane: false
+    controlPlane: true
     disableSearchDomain: true
     networkInterfaces:
       - interface: eth0
         mtu: 0
         dhcp: true
+        vip:
+          ip: 192.168.0.10
 controlPlane:
   patches:
     - |-
