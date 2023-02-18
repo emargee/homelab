@@ -3,13 +3,13 @@ creation_rules:
   - path_regex: (kubernetes|global|clusters|manifests|talos)/.*\.sops\.ya?ml
     encrypted_regex: '((?i)(pass|secret($|[^N])|key|token|^data$|^stringData))'
     age: >-
-      age12kzuwvvedndehkke84apwamungqrcavf2khwjvd46f6lkq0wqq5q3s3vth
+      age1c8gkw6p664dp3x0ycshs5kn3p05phn4vulsh0zhjuzptyfr2vv9s0znrzy
   - path_regex: infrastructure/.*\.sops\.ya?ml
     age: >-
-      age12kzuwvvedndehkke84apwamungqrcavf2khwjvd46f6lkq0wqq5q3s3vth
+      age1c8gkw6p664dp3x0ycshs5kn3p05phn4vulsh0zhjuzptyfr2vv9s0znrzy
   - path_regex: kubernetes/.*\.sops\.toml
     age: >-
-      age12kzuwvvedndehkke84apwamungqrcavf2khwjvd46f6lkq0wqq5q3s3vth
+      age1c8gkw6p664dp3x0ycshs5kn3p05phn4vulsh0zhjuzptyfr2vv9s0znrzy
   - path_regex: kubernetes/.*\.sops\.json
     age: >-
-      age12kzuwvvedndehkke84apwamungqrcavf2khwjvd46f6lkq0wqq5q3s3vth
+      age1c8gkw6p664dp3x0ycshs5kn3p05phn4vulsh0zhjuzptyfr2vv9s0znrzy
