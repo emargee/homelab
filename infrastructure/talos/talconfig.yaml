@@ -2,8 +2,6 @@ clusterName: onepiece
 talosVersion: v1.3.4
 kubernetesVersion: v1.26.1
 endpoint: https://onepiece.home.local:6443
-cniConfig:
-  name: none
 allowSchedulingOnMasters: true
 additionalMachineCertSans:
   - onepiece.home.local
@@ -41,3 +39,7 @@ controlPlane:
         value:
           feature-gates: GracefulNodeShutdown=true,MixedProtocolLBService=true
           rotate-server-certificates: "true"
+      - op: add
+        path: /cluster/network/cni
+        value:
+          name: "none"

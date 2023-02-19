@@ -36,6 +36,8 @@ spec:
   values:
     ipam:
       mode: "kubernetes"
+    securityContext:
+      privileged: true
     # cluster:
     #   name: "${CLUSTER_NAME}"
     #   id: "${CLUSTER_ID}"
@@ -106,5 +108,3 @@ spec:
     #   enabled: false
     # externalIPs:
     #   enabled: false
-    # securityContext:
-    #   privileged: true

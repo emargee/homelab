@@ -13,7 +13,7 @@ tasks:
     cmds:
       - kubectl apply --server-side --kustomize {{.CLUSTER_DIR}}/bootstrap/crds/
       - kubectl apply -n flux-system --server-side --kustomize {{.CLUSTER_DIR}}/bootstrap/flux
-      - kubectl delete secret -n flux-system sops-age
+      - kubectl delete secret -n flux-system sops-age --ignore-not-found
       - cat {{.SOPS_AGE_KEY_FILE}} | kubectl -n flux-system create secret generic sops-age --from-file=age.agekey=/dev/stdin
       #- sops --decrypt {{.CLUSTER_DIR}}/flux/vars/cluster-secrets.sops.yaml | kubectl apply -f -
       - kubectl apply -f {{.CLUSTER_DIR}}/flux/vars/cluster-settings.yaml
