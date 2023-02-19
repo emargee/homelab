@@ -30,3 +30,8 @@ spec:
   sourceRef:
     kind: GitRepository
     name: home-cluster-kubernetes
+  postBuild:
+    substituteFrom:
+      - kind: ConfigMap
+        name: cluster-settings
+        optional: false
