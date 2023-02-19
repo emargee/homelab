@@ -4,7 +4,7 @@ kind: Kustomization
 namespace: flux-system
 resources:
   # - ./actions-runner-controller-charts.yaml
-  # - ./bjw-s-charts.yaml
+  - ./bjw-s-charts.yaml
   - ./cilium-charts.yaml
   # - ./emqx-charts.yaml
   # - ./cloudnative-pg.yaml
@@ -18,7 +18,7 @@ resources:
   # - ./k8s-at-home-charts.yaml
   # - ./kubernetes-sigs-descheduler-charts.yaml
   - ./kubernetes-sigs-metrics-server-charts.yaml
-  # - ./kubernetes-sigs-nfd-charts.yaml
+  - ./kubernetes-sigs-nfd-charts.yaml
   # - ./kyverno-charts.yaml
   - ./metallb-charts.yaml
   # - ./prometheus-community-charts.yaml
