@@ -14,6 +14,7 @@ resources:
   # - ./hajimari-charts.yaml
   # - ./infracloudio-charts.yaml
   # - ./ingress-nginx-charts.yaml
+  - ./haproxy-charts.yaml
   - ./jetstack-charts.yaml
   # - ./k8s-at-home-charts.yaml
   # - ./kubernetes-sigs-descheduler-charts.yaml
