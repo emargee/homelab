@@ -3,6 +3,8 @@ talosVersion: v1.3.4
 kubernetesVersion: v1.26.1
 endpoint: https://onepiece.home.local:6443
 allowSchedulingOnMasters: true
+cniConfig:
+  name: none
 additionalMachineCertSans:
   - onepiece.home.local
   - 192.168.0.10
@@ -23,23 +25,25 @@ nodes:
   - hostname: sanji.home.local
     ipAddress: 192.168.1.201
     installDisk: /dev/sda
-    controlPlane: true
+    controlPlane: false
     disableSearchDomain: true
     networkInterfaces:
       - interface: eth0
         mtu: 0
         dhcp: true
-        vip:
-          ip: 192.168.0.10
 controlPlane:
   patches:
     - |-
       - op: add
         path: /machine/kubelet/extraArgs
         value:
-          feature-gates: GracefulNodeShutdown=true,MixedProtocolLBService=true
+          feature-gates: MixedProtocolLBService=true,EphemeralContainers=True
           rotate-server-certificates: "true"
+worker:
+  patches:
+    - |-
       - op: add
-        path: /cluster/network/cni
+        path: /machine/kubelet/extraArgs
         value:
-          name: "none"
+          feature-gates: MixedProtocolLBService=true,EphemeralContainers=True
+          rotate-server-certificates: "true"
