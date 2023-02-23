@@ -31,6 +31,14 @@ spec:
       enabled: true
       createPrometheusRules: true
     cephClusterSpec:
+      mon:
+        count: 2
+        allowMultiplePerNode: false
+      mgr:
+        count: 1
+        modules:
+          - name: pg_autoscaler
+            enabled: true
       network:
         provider: host
       crashCollector:
