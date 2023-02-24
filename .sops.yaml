@@ -1,15 +1,14 @@
 ---
 creation_rules:
+  - encrypted_regex: '^(data|stringData)$'
+    age: age1c8gkw6p664dp3x0ycshs5kn3p05phn4vulsh0zhjuzptyfr2vv9s0znrzy
   - path_regex: (kubernetes|global|clusters|manifests|talos)/.*\.sops\.ya?ml
     encrypted_regex: '((?i)(pass|secret($|[^N])|key|token|^data$|^stringData))'
-    age: >-
-      age1c8gkw6p664dp3x0ycshs5kn3p05phn4vulsh0zhjuzptyfr2vv9s0znrzy
+    age: age1c8gkw6p664dp3x0ycshs5kn3p05phn4vulsh0zhjuzptyfr2vv9s0znrzy
   - path_regex: infrastructure/.*\.sops\.ya?ml
-    age: >-
-      age1c8gkw6p664dp3x0ycshs5kn3p05phn4vulsh0zhjuzptyfr2vv9s0znrzy
+    age: age1c8gkw6p664dp3x0ycshs5kn3p05phn4vulsh0zhjuzptyfr2vv9s0znrzy
   - path_regex: kubernetes/.*\.sops\.toml
-    age: >-
-      age1c8gkw6p664dp3x0ycshs5kn3p05phn4vulsh0zhjuzptyfr2vv9s0znrzy
+    age: age1c8gkw6p664dp3x0ycshs5kn3p05phn4vulsh0zhjuzptyfr2vv9s0znrzy
   - path_regex: kubernetes/.*\.sops\.json
-    age: >-
-      age1c8gkw6p664dp3x0ycshs5kn3p05phn4vulsh0zhjuzptyfr2vv9s0znrzy
+    age: age1c8gkw6p664dp3x0ycshs5kn3p05phn4vulsh0zhjuzptyfr2vv9s0znrzy
+  
