@@ -55,6 +55,7 @@ spec:
         annotations:
           kubernetes.io/ingress.class: haproxy
           hajimari.io/icon: mdi:video-input-antenna
+          what.co/thing: ${SECRET_THING}
         hosts:
           - host: &host "{{ .Release.Name }}.${INTERNAL_DOMAIN}"
             paths:
