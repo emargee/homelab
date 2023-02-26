@@ -1,0 +1,91 @@
+---
+# yaml-language-server: $schema=https://kubernetes-schemas.trux.dev/helmrelease_v2beta1.json
+apiVersion: helm.toolkit.fluxcd.io/v2beta1
+kind: HelmRelease
+metadata:
+  name: &app plex
+  namespace: media
+spec:
+  interval: 15m
+  chart:
+    spec:
+      chart: app-template
+      version: 1.3.1
+      sourceRef:
+        kind: HelmRepository
+        name: bjw-s-charts
+        namespace: flux-system
+  install:
+    remediation:
+      retries: 5
+  upgrade:
+    remediation:
+      retries: 5
+  values:
+    image:
+      repository: ghcr.io/onedr0p/plex
+      tag: 1.31.0.6654-02189b09f@sha256:e008f8822f31a5648ea5b28289ca82388e9111db4418a2662d7fb52ab9e61712
+    env:
+      TZ: "Europe/London"
+    service:
+      main:
+        type: LoadBalancer
+        externalTrafficPolicy: Local
+        loadBalancerIP: "${LB_PLEX}"
+        ports:
+          http:
+            port: &port 32400
+    ingress:
+      main:
+        enabled: true
+        annotations:
+          external-dns.home.arpa/enabled: "true"
+          probe.home.arpa/enabled: "false"
+          hajimari.io/icon: mdi:plex
+          kubernetes.io/ingress.class: haproxy
+        hosts:
+          - host: &host "plex.${INTERNAL_DOMAIN}"
+            paths:
+              - path: /
+                pathType: Prefix
+    podSecurityContext:
+      runAsUser: 1000
+      runAsGroup: 1000
+      fsGroup: 1000
+      fsGroupChangePolicy: "OnRootMismatch"
+    persistence:
+      config:
+        enabled: true
+        existingClaim: plex-config-v1
+      media:
+        enabled: true
+        type: nfs
+        server: &nas "192.168.1.20"
+        path: /mnt/anime-hd-1
+        mountPath: /data/anime-hd
+      # backup:
+      #   enabled: true
+      #   type: nfs
+      #   server: *nas
+      #   path: /tank/backup/kubernetes/apps/plex
+      #   mountPath: /config/backup
+      transcode:
+        enabled: true
+        type: emptyDir
+    affinity:
+      nodeAffinity:
+        requiredDuringSchedulingIgnoredDuringExecution:
+          nodeSelectorTerms:
+            - matchExpressions:
+                - key: feature.node.kubernetes.io/custom-intel-gpu
+                  operator: In
+                  values:
+                    - "true"
+    resources:
+      requests:
+        gpu.intel.com/i915: 1
+        cpu: 100m
+        memory: 2000Mi
+      limits:
+        gpu.intel.com/i915: 1
+        memory: 10000Mi
