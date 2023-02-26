@@ -22,6 +22,7 @@ resources:
   - ./kubernetes-sigs-nfd-charts.yaml
   # - ./kyverno-charts.yaml
   - ./metallb-charts.yaml
+  - ./nfs-csi-charts.yaml
   # - ./prometheus-community-charts.yaml
   - ./rook-ceph-charts.yaml
   # - ./stakater-charts.yaml
