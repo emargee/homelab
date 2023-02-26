@@ -27,6 +27,7 @@ spec:
       tag: 1.31.0.6654-02189b09f@sha256:e008f8822f31a5648ea5b28289ca82388e9111db4418a2662d7fb52ab9e61712
     env:
       TZ: "Europe/London"
+      PLEX_CLAIM: "claim-cM1WMsGAv_aGdCyaVipQ"
     service:
       main:
         type: LoadBalancer
