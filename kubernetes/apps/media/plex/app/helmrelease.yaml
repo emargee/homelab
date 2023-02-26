@@ -39,8 +39,6 @@ spec:
       main:
         enabled: true
         annotations:
-          external-dns.home.arpa/enabled: "true"
-          probe.home.arpa/enabled: "false"
           hajimari.io/icon: mdi:plex
           kubernetes.io/ingress.class: haproxy
         hosts:
