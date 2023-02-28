@@ -52,7 +52,6 @@ spec:
             - 'patch'
     ingress:
       enabled: true
-      className: 'nginx'
       annotations:
         probe.home.arpa/enabled: 'false'
         hajimari.io/icon: mdi:sawtooth-wave
