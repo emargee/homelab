@@ -42,7 +42,7 @@ spec:
         hajimari.io/icon: mdi:kubernetes
         kubernetes.io/ingress.class: haproxy
       hosts:
-        - &host kubernetes.${INTERNAL_DOMAIN}
+        - &host dashboard.${INTERNAL_DOMAIN}
     metricsScraper:
       enabled: true
     serviceMonitor:
