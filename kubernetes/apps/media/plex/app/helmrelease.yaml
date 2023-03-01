@@ -24,7 +24,7 @@ spec:
   values:
     image:
       repository: ghcr.io/onedr0p/plex
-      tag: rolling@sha256:10a6d5e55e71ca6bd0b618cd987c6d6ba5260fd46d8e3e3b77fab2524ef686ea
+      tag: rolling@sha256:8efbab74dbf0614a3ee51a73c9d36ed9a525fc2e735dd841a65e026740da0152
     env:
       TZ: "Europe/London"
     service:
