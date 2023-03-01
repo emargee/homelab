@@ -15,13 +15,6 @@
   },
   "packageRules": [
     {
-      "matchDatasources": [
-        "docker",
-        "github-actions",
-        "github-releases",
-        "github-tags",
-        "helm"
-      ],
       "automerge": true,
       "automergeType": "branch",
       "requiredStatusChecks": null,
