@@ -32,7 +32,7 @@ spec:
       createPrometheusRules: true
     cephClusterSpec:
       mon:
-        count: 2
+        count: 3
         allowMultiplePerNode: false
       mgr:
         count: 1
@@ -55,10 +55,13 @@ spec:
         nodes:
           - name: "zoro"
             devices:
-              - name: "/dev/nvme0n1"
+              - name: "/dev/disk/by-id/nvme-CT500P3SSD8_2238E668CF8C"
           - name: "sanji"
             devices:
-              - name: "/dev/nvme0n1"
+              - name: "/dev/disk/by-id/nvme-CT500P3SSD8_2238E668CF99"
+          - name: "nami"
+            devices:
+              - name: "/dev/disk/by-id/nvme-CT500P3SSD8_2302E69C0BD3"
     ingress:
       dashboard:
         annotations:
@@ -75,7 +78,7 @@ spec:
         spec:
           failureDomain: host
           replicated:
-            size: 2
+            size: 3
         storageClass:
           enabled: true
           name: ceph-block
