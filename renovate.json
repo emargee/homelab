@@ -14,7 +14,7 @@
     "fileMatch": ["kubernetes/.+\\.ya?ml$"]
   },
   packageRules: [
-  {
+    {
       matchDatasources: [
         'docker',
         'github-actions',
@@ -40,7 +40,7 @@
         'ghcr.io/onedr0p/sonarr',
         'ghcr.io/onedr0p/sonarr-develop',
         'ghcr.io/onedr0p/plex',
-        'renovatebot/github-action',
+        'renovatebot/github-action'
       ]
     }
   ]
