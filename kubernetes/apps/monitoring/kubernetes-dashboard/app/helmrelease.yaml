@@ -34,6 +34,7 @@ spec:
       - --disable-settings-authorizer
       - --enable-insecure-login
       - --token-ttl=43200
+    protocolHttp: true
     service:
       externalPort: 80
     ingress:
