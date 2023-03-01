@@ -16,21 +16,64 @@ nodes:
     installDisk: /dev/sda
     controlPlane: true
     disableSearchDomain: true
+    nameservers:
+      - 192.168.1.1
+      - 1.1.1.1
+      - 8.8.8.8
     networkInterfaces:
       - interface: eth0
         mtu: 0
         dhcp: true
         vip:
           ip: 192.168.0.10
+    patches:
+      - |-
+        - op: add
+          path: /machine/install/extraKernelArgs
+          value:
+            - nvme_core.default_ps_max_latency_us=0
   - hostname: sanji.home.local
     ipAddress: 192.168.1.201
     installDisk: /dev/sda
-    controlPlane: false
+    controlPlane: true
     disableSearchDomain: true
+    nameservers:
+      - 192.168.1.1
+      - 1.1.1.1
+      - 8.8.8.8
     networkInterfaces:
       - interface: eth0
         mtu: 0
         dhcp: true
+        vip:
+          ip: 192.168.0.10
+    patches:
+      - |-
+        - op: add
+          path: /machine/install/extraKernelArgs
+          value:
+            - nvme_core.default_ps_max_latency_us=0
+  - hostname: nami.home.local
+    ipAddress: 192.168.1.202
+    installDisk: /dev/sda
+    controlPlane: true
+    disableSearchDomain: true
+    nameservers:
+      - 192.168.1.1
+      - 1.1.1.1
+      - 8.8.8.8
+    networkInterfaces:
+      - interface: eth0
+        mtu: 0
+        dhcp: true
+        vip:
+          ip: 192.168.0.10
+    patches:
+      - |-
+        - op: add
+          path: /machine/install/extraKernelArgs
+          value:
+            - nvme_core.default_ps_max_latency_us=0
 controlPlane:
   patches:
     - |-
@@ -39,6 +82,12 @@ controlPlane:
         value:
           feature-gates: MixedProtocolLBService=true,EphemeralContainers=True
           rotate-server-certificates: "true"
+    - |-
+      machine:
+        time:
+          disabled: false
+          servers:
+            - time.cloudflare.com
 worker:
   patches:
     - |-
