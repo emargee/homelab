@@ -49,13 +49,13 @@ spec:
         nodes:
           - name: "zoro"
             devices:
-              - name: "/dev/disk/by-id/nvme-CT500P3SSD8_2238E668CF8C"
+              - name: "/dev/nvme0n1"
           - name: "sanji"
             devices:
-              - name: "/dev/disk/by-id/nvme-CT500P3SSD8_2238E668CF99"
+              - name: "/dev/nvme0n1"
           - name: "nami"
             devices:
-              - name: "/dev/disk/by-id/nvme-CT500P3SSD8_2302E69C0BD3"
+              - name: "/dev/nvme0n1"
     ingress:
       dashboard:
         annotations:
