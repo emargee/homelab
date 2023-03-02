@@ -59,18 +59,12 @@ spec:
       config:
         enabled: true
         existingClaim: plex-config-v1
-      media:
+      anime:
         enabled: true
         type: nfs
         server: &nas "192.168.1.20"
         path: /mnt/anime-hd-1
         mountPath: /data/anime-hd
-      backup:
-        enabled: true
-        type: nfs
-        server: *nas
-        path: /mnt/data/backup/kubernetes/apps/plex
-        mountPath: /config/backup
       transcode:
         enabled: true
         type: emptyDir

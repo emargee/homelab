@@ -12,3 +12,8 @@ spec:
     # Use an existing PVC, don't provision a new one
     destinationPVC: plex-config-v1
     copyMethod: Direct
+    cacheCapacity: 2Gi
+    moverSecurityContext:
+      runAsUser: 568
+      runAsGroup: 568
+      fsGroup: 568
