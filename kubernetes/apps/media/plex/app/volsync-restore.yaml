@@ -1,0 +1,14 @@
+---
+apiVersion: volsync.backube/v1alpha1
+kind: ReplicationDestination
+metadata:
+  name: plex-restore
+  namespace: media
+spec:
+  trigger:
+    manual: restore-once
+  restic:
+    repository: plex-restic-secret
+    # Use an existing PVC, don't provision a new one
+    destinationPVC: plex-config-v1
+    copyMethod: Direct
