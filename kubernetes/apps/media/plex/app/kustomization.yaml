@@ -7,6 +7,6 @@ resources:
   - ./helmrelease.yaml
   - ./volsync-secret.yaml
 #  - ./volsync-backup.yaml
-  - ./volsync-restore.yaml
+#  - ./volsync-restore.yaml
 metadata:
   namespace: media
