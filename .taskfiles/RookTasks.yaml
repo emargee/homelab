@@ -11,4 +11,4 @@ tasks:
   password:
     desc: Retrieve the rook-ceph password
     cmds:
-      - kubectl -n rook-ceph get secret rook-ceph-dashboard-password -o jsonpath="{['data']['password']}" | base64 --decode | pbcopy && echo "Copied to clipboard"
+      - kubectl -n rook-ceph get secret rook-ceph-dashboard-password -o go-template='{{"{{"}} range $k, $v := .data {{"}}"}}{{"{{"}} $v | base64decode{{"}}"}}{{"{{"}}"\n"{{"}}"}}{{"{{"}}end{{"}}"}}'
