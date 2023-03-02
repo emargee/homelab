@@ -23,9 +23,8 @@ tasks:
         msg: |
           Age key file is not found. Did you forget to create it?
 
-  cilium:
-    desc: Install Cilium Helm chart
+  reconcile:
+    desc: Run reconcile
     cmds:
-      - helm repo add cilium https://helm.cilium.io/ --force-update
-      - helm repo update
-      - helm upgrade -i cilium cilium/cilium --version 1.13.0 --namespace kube-system --set ipam.mode=kubernetes --set securityContext.privileged=true
+      - flux reconcile source git home-cluster-kubernetes
+      - flux reconcile kustomization cluster
