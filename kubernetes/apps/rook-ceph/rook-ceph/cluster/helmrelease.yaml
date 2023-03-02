@@ -35,6 +35,8 @@ spec:
       enabled: true
       createPrometheusRules: true
     cephClusterSpec:
+      mgr:
+        count: 1
       crashCollector:
         disable: false
       dashboard:
