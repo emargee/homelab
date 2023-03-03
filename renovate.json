@@ -23,7 +23,7 @@
       "requiredStatusChecks": null,
       "matchUpdateTypes": ["minor", "patch", "digest"],
       "matchPackageNames": [
-        "ghcr.io/onedr0p/plex",
+        "ghcr.io/onedr0p/plex-beta",
         "renovatebot/github-action"
       ]
     }
