@@ -36,3 +36,4 @@ resources:
   - ./piraeus.yaml
   # - ./enix-charts.yaml
   - ./weave-gitops.yaml
+  - ./minio-charts.yaml
