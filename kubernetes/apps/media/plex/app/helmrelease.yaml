@@ -27,7 +27,7 @@ spec:
       tag: 1.31.2.6739-a87e876bd@sha256:236fa7e4ebf3209afcc32634129644a29ca7445aa4b6286e296a82b2ac310f76
     env:
       TZ: "Europe/London"
-      ADVERTISE_IP: "192.168.2.20"
+      ADVERTISE_IP: "${LB_PLEX}"
       ALLOWED_NETWORKS: "192.168.0.0/16"
     service:
       main:
@@ -64,7 +64,7 @@ spec:
       anime:
         enabled: true
         type: nfs
-        server: &nas "192.168.1.20"
+        server: &nas "${NAS}"
         path: /mnt/anime-hd-1
         mountPath: /data/anime-hd
       transcode:
