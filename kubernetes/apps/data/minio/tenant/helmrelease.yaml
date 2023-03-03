@@ -77,9 +77,6 @@ spec:
         topologySpreadConstraints: []
         ## Configure Runtime Class
         # runtimeClassName: ""
-      buckets:
-        - name: "backups"
-          objectLock: false
       log:
         disabled: true
       prometheus:
