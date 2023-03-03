@@ -28,6 +28,8 @@ spec:
     secrets:
       accessKey: ${SECRET_MINIO_ACCESSKEY}
       secretKey: ${SECRET_MINIO_SECRETKEY}
+    certificate:
+      requestAutoCert: true
     tenant:
       name: minio
       pools:
