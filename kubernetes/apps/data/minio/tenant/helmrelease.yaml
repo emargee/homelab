@@ -74,8 +74,8 @@ spec:
         topologySpreadConstraints: []
         ## Configure Runtime Class
         # runtimeClassName: ""
-    log:
-      disabled: true
+      log:
+        disabled: true
     ingress:
       api:
         enabled: true
