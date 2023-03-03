@@ -74,14 +74,14 @@ spec:
         topologySpreadConstraints: []
         ## Configure Runtime Class
         # runtimeClassName: ""
-  ingress:
-    api:
-      enabled: true
-      annotations:
-        kubernetes.io/ingress.class: haproxy
-      host: "minio.${INTERNAL_DOMAIN}"
-    console:
-      enabled: true
-      annotations:
-        kubernetes.io/ingress.class: haproxy
-      host: "minio-console.${INTERNAL_DOMAIN}"
+    ingress:
+      api:
+        enabled: true
+        annotations:
+          kubernetes.io/ingress.class: haproxy
+        host: "minio.${INTERNAL_DOMAIN}"
+      console:
+        enabled: true
+        annotations:
+          kubernetes.io/ingress.class: haproxy
+        host: "minio-console.${INTERNAL_DOMAIN}"
