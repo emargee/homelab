@@ -28,8 +28,6 @@ spec:
     secrets:
       accessKey: ${SECRET_MINIO_ACCESSKEY}
       secretKey: ${SECRET_MINIO_SECRETKEY}
-    certificate:
-      requestAutoCert: true
     tenant:
       name: minio
       pools:
@@ -80,6 +78,8 @@ spec:
         disabled: true
       prometheus:
         disabled: true
+      certificate:
+        requestAutoCert: true
     ingress:
       api:
         enabled: true
