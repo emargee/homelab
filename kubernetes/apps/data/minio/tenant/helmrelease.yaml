@@ -76,6 +76,8 @@ spec:
         # runtimeClassName: ""
       log:
         disabled: true
+      prometheus:
+        disabled: true
     ingress:
       api:
         enabled: true
