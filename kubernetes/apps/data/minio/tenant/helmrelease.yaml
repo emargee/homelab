@@ -30,6 +30,9 @@ spec:
       secretKey: ${SECRET_MINIO_SECRETKEY}
     tenant:
       name: minio
+      image:
+        repository: quay.io/minio/minio
+        tag: RELEASE.2023-01-12T02-06-16Z
       pools:
       ## Servers specifies the number of MinIO Tenant Pods / Servers in this pool.
       ## For standalone mode, supply 1. For distributed mode, supply 4 or more.
