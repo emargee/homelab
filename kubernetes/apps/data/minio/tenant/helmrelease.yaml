@@ -79,7 +79,7 @@ spec:
       prometheus:
         disabled: true
       certificate:
-        requestAutoCert: true
+        requestAutoCert: false
     ingress:
       api:
         enabled: true
