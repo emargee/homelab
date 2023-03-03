@@ -75,7 +75,8 @@ spec:
         ## Configure Runtime Class
         # runtimeClassName: ""
       buckets:
-        - backup
+        - name: "backups"
+          objectLock: false
       log:
         disabled: true
       prometheus:
