@@ -77,7 +77,7 @@ spec:
         enabled: true
         type: nfs
         server: &nas "${NAS}"
-        path: /mnt/movies-hd-1
+        path: /mnt/movies-hd
         mountPath: /data/movies-hd
       transcode:
         enabled: true
