@@ -6,3 +6,4 @@ namespace: data
 resources:
   - ./secret.yaml
   - ./cluster.yaml
+  - ./service.yaml
