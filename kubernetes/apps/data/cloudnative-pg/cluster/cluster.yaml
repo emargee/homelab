@@ -1,0 +1,17 @@
+---
+apiVersion: postgresql.cnpg.io/v1
+kind: Cluster
+metadata:
+  name: postgres
+  namespace: data
+spec:
+  instances: 1
+
+  storage:
+    size: 20Gi
+    storageClass: ceph-block
+
+  primaryUpdateStrategy: unsupervised
+
+  superuserSecret:
+    name: cloudnative-pg-postgres-superuser
