@@ -15,3 +15,10 @@ spec:
 
   superuserSecret:
     name: cloudnative-pg-postgres-superuser
+
+  bootstrap:
+    initdb:
+      database: application
+      owner: ${SECRET_POSTGRES_APPUSER}
+      secret:
+        name: cloudnative-pg-postgres-appuser
