@@ -1,0 +1,81 @@
+---
+# yaml-language-server: $schema=https://kubernetes-schemas.trux.dev/helmrelease_v2beta1.json
+apiVersion: helm.toolkit.fluxcd.io/v2beta1
+kind: HelmRelease
+metadata:
+  name: &app sonarr
+  namespace: media
+spec:
+  interval: 15m
+  chart:
+    spec:
+      chart: app-template
+      version: 1.3.1
+      sourceRef:
+        kind: HelmRepository
+        name: bjw-s-charts
+        namespace: flux-system
+  install:
+    createNamespace: true
+    remediation:
+      retries: 5
+  upgrade:
+    remediation:
+      retries: 5
+  values:
+    controller:
+      annotations:
+        reloader.stakater.com/auto: 'true'
+    image:
+      repository: ghcr.io/onedr0p/sonarr-develop
+      tag: 4.0.0.391@sha256:dbf5513327d9c9c0bb9af284e7cdc7e8db8325b1239505669a3141416c4c52e1
+    env:
+      TZ: "Europe/London"
+      SONARR__INSTANCE_NAME: Sonarr
+      SONARR__APPLICATION_URL: 'http://sonarr.${INTERNAL_DOMAIN}'
+      SONARR__LOG_LEVEL: info
+    service:
+      main:
+        ports:
+          http:
+            port: 8989
+    ingress:
+      main:
+        enabled: true
+        annotations:
+          kubernetes.io/ingress.class: haproxy
+          hajimari.io/icon: mdi:television-classic
+        hosts:
+          - host: 'sonarr.${INTERNAL_DOMAIN}'
+            paths:
+              - path: /
+                pathType: Prefix
+    podSecurityContext:
+      runAsUser: 568
+      runAsGroup: 568
+      fsGroup: 568
+      fsGroupChangePolicy: 'OnRootMismatch'
+      supplementalGroups:
+        - 100
+    persistence:
+      config:
+        enabled: true
+        existingClaim: sonarr-config-v1
+      anime:
+        enabled: true
+        type: nfs
+        server: &nas "${NAS}"
+        path: /mnt/anime-hd-1
+        mountPath: /mnt/anime-hd-1
+      tv:
+        enabled: true
+        type: nfs
+        server: *nas
+        path: /mnt/tv-hd-1
+        mountPath: /mnt/tv-hd-1
+      downloads:
+        enabled: true
+        type: nfs
+        server: *nas
+        path: /mnt/data/downloads
+        mountPath: /downloads
