@@ -60,7 +60,7 @@ spec:
       downloads:
         enabled: true
         type: nfs
-        server: *nas
+        server: &nas "${NAS}"
         path: /mnt/data/downloads
         mountPath: /downloads
       incomplete:
