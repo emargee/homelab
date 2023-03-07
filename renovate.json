@@ -24,6 +24,8 @@
       "matchUpdateTypes": ["minor", "patch", "digest"],
       "matchPackageNames": [
         "ghcr.io/onedr0p/plex-beta",
+        "ghcr.io/onedr0p/sonarr-beta",
+        "ghcr.io/onedr0p/sabnzbd",
         "renovatebot/github-action"
       ]
     }
