@@ -31,6 +31,8 @@ spec:
     master:
       persistence:
         size: 500M
+      service:
+        loadBalancerIP: ${LB_REDIS}
     architecture: "standalone"
     sentinel:
       enabled: false
