@@ -32,6 +32,7 @@ spec:
       persistence:
         size: 500M
       service:
+        type: "LoadBalancer"
         loadBalancerIP: ${LB_REDIS}
     architecture: "standalone"
     sentinel:
