@@ -41,6 +41,7 @@ spec:
         annotations:
           external-dns.home.arpa/enabled: "true"
           hajimari.io/icon: mdi:eye-circle
+          kubernetes.io/ingress.class: haproxy
         hosts:
           - host: &host "request.${INTERNAL_DOMAIN}"
             paths:
