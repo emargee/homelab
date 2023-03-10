@@ -11,4 +11,4 @@ resources:
   - ./prowlarr/ks.yaml
   - ./overseerr/ks.yaml
   - ./kaizoku/ks.yaml
-  - ./kavika/ks.yaml
+  - ./kavita/ks.yaml

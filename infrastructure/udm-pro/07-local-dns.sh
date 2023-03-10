@@ -15,7 +15,7 @@ address=/onepiece.home.local/192.168.0.10
 address=/echoserver.home.local/192.168.2.10
 address=/hubble.home.local/192.168.2.10
 address=/rook.home.local/192.168.2.10
-address=/plex.home.local/192.168.2.20
+address=/plex.home.local/192.168.2.10
 address=/goldilocks.home.local/192.168.2.10
 address=/weave.home.local/192.168.2.10
 address=/dashboard.home.local/192.168.2.10
@@ -23,9 +23,13 @@ address=/minio.home.local/192.168.2.10
 address=/minio-console.home.local/192.168.2.10
 address=/sonarr.home.local/192.168.2.10
 address=/sabnzbd.home.local/192.168.2.10
+address=/prowlarr.home.local/192.168.2.10
+address=/request.home.local/192.168.2.10
+address=/radarr.home.local/192.168.2.10
+address=/manga.home.local/192.168.2.10
+address=/kaizoku.home.local/192.168.2.10
 EOF
-
+ 
 # Restart dnsmasq so it sees the new conf file
 pkill dnsmasq
-
 
