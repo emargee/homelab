@@ -29,7 +29,8 @@
         "ghcr.io/onedr0p/sabnzbd",
         "ghcr.io/onedr0p/radarr-develop",
         "ghcr.io/sct/overseerr",
-        "renovatebot/github-action"
+        "renovatebot/github-action",
+        "kubernetes-dashboard"
       ]
     }
   ]
