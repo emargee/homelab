@@ -61,24 +61,12 @@ spec:
       config:
         enabled: true
         existingClaim: plex-config-v1
-      anime:
+      media:
         enabled: true
         type: nfs
         server: &nas "${NAS}"
-        path: /mnt/anime-hd-1
-        mountPath: /data/anime-hd
-      tv:
-        enabled: true
-        type: nfs
-        server: &nas "${NAS}"
-        path: /mnt/tv-hd-1
-        mountPath: /data/tv-hd
-      movies:
-        enabled: true
-        type: nfs
-        server: &nas "${NAS}"
-        path: /mnt/movies-hd
-        mountPath: /data/movies-hd
+        path: /mnt
+        mountPath: /data
       transcode:
         enabled: true
         type: emptyDir
