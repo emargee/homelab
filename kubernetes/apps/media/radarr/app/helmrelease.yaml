@@ -67,3 +67,9 @@ spec:
         server: &nas "${NAS}"
         path: /mnt
         mountPath: /data
+    resources:
+      requests:
+        cpu: 50m
+        memory: 250Mi
+      limits:
+        memory: 2000Mi
