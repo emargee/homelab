@@ -61,21 +61,9 @@ spec:
       config:
         enabled: true
         existingClaim: sonarr-config-v1
-      anime:
+      media:
         enabled: true
         type: nfs
         server: &nas "${NAS}"
-        path: /mnt/anime-hd-1
-        mountPath: /mnt/anime-hd-1
-      tv:
-        enabled: true
-        type: nfs
-        server: *nas
-        path: /mnt/tv-hd-1
-        mountPath: /mnt/tv-hd-1
-      downloads:
-        enabled: true
-        type: nfs
-        server: *nas
-        path: /mnt/data/downloads
-        mountPath: /downloads
+        path: /mnt
+        mountPath: /data
