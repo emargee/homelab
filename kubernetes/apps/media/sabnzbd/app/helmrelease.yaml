@@ -57,12 +57,12 @@ spec:
       config:
         enabled: true
         existingClaim: sabnzbd-config-v1
-      downloads:
+      media:
         enabled: true
         type: nfs
         server: &nas "${NAS}"
-        path: /mnt/data/downloads
-        mountPath: /downloads
+        path: /media
+        mountPath: /data
       incomplete:
         enabled: true
         type: emptyDir
