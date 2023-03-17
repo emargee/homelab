@@ -61,7 +61,7 @@ spec:
         enabled: true
         type: nfs
         server: &nas "${NAS}"
-        path: /nfs
+        path: /mnt
         mountPath: /data
       incomplete:
         enabled: true
