@@ -30,7 +30,8 @@
         "ghcr.io/onedr0p/radarr-develop",
         "ghcr.io/sct/overseerr",
         "renovatebot/github-action",
-        "kubernetes-dashboard"
+        "kubernetes-dashboard",
+        "registry.k8s.io/metrics-server/metrics-server"
       ]
     }
   ]
