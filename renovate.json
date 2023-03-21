@@ -31,7 +31,8 @@
         "ghcr.io/sct/overseerr",
         "renovatebot/github-action",
         "kubernetes-dashboard",
-        "registry.k8s.io/metrics-server/metrics-server"
+        "registry.k8s.io/metrics-server/metrics-server",
+        "redis"
       ]
     }
   ]
