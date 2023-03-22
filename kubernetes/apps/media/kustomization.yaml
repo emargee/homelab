@@ -12,3 +12,4 @@ resources:
   - ./overseerr/ks.yaml
   - ./kaizoku/ks.yaml
   - ./kavita/ks.yaml
+  - ./sonarr-uhd/ks.yaml

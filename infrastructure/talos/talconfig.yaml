@@ -1,6 +1,6 @@
 clusterName: onepiece
 talosVersion: v1.3.6
-kubernetesVersion: v1.26.2
+kubernetesVersion: v1.26.3
 endpoint: https://onepiece.home.local:6443
 allowSchedulingOnMasters: true
 cniConfig:

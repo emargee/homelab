@@ -1,0 +1,92 @@
+---
+# yaml-language-server: $schema=https://kubernetes-schemas.trux.dev/helmrelease_v2beta1.json
+apiVersion: helm.toolkit.fluxcd.io/v2beta1
+kind: HelmRelease
+metadata:
+  name: hajimari
+  namespace: services
+spec:
+  interval: 15m
+  chart:
+    spec:
+      chart: hajimari
+      version: 2.0.2
+      sourceRef:
+        kind: HelmRepository
+        name: hajimari-charts
+        namespace: flux-system
+      interval: 15m
+  install:
+    createNamespace: true
+    remediation: # perform remediation when helm install fails
+      retries: 3
+  upgrade:
+    remediation: # perform remediation when helm upgrade fails
+      retries: 3
+      remediateLastFailure: true # remediate the last failure, when no retries remain
+    cleanupOnFail: true
+  values:
+    controller:
+      replicas: 1
+      strategy: RollingUpdate
+    env:
+      TZ: "Europe/London"
+    hajimari:
+      title: "[mRg]"
+      lightTheme: tron
+      darkTheme: tron
+      alwaysTargetBlank: true
+      showGreeting: false
+      showAppGroups: false
+      showAppStatus: true
+      showBookmarkGroups: false
+      showGlobalBookmarks: false
+      showAppUrls: false
+      showAppInfo: true
+      defaultEnable: true
+      defaultAppIcon: mdi:application
+      defaultSearchProvider: Google
+      namespaceSelector:
+        matchNames:
+          - monitoring
+          - media
+          - rook-ceph
+          - networking
+          - services
+          - data
+      customApps: []
+      globalBookmarks:
+        - group: Dev
+          bookmarks: []
+        - group: Cloud
+          bookmarks: []
+        - group: Games
+          bookmarks: []
+        - group: Kubernetes
+          bookmarks: []
+        - group: Shopping
+          bookmarks: []
+      searchProviders: []
+    ingress:
+      main:
+        enabled: true
+        annotations:
+          hajimari.io/enable: "false"
+          kubernetes.io/ingress.class: haproxy
+        hosts:
+          - host: 'index.${INTERNAL_DOMAIN}'
+            paths:
+              - path: /
+                pathType: Prefix
+    podAnnotations:
+      configmap.reloader.stakater.com/reload: "hajimari-settings"
+    persistence:
+      data:
+        enabled: true
+        type: emptyDir
+    resources:
+      requests:
+        cpu: 15m
+        memory: 64M
+      limits:
+        memory: 64M
