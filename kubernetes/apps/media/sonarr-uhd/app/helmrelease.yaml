@@ -65,5 +65,5 @@ spec:
         enabled: true
         type: nfs
         server: &nas "${NAS}"
-        path: /mnt/tv-uhd-1
-        mountPath: /data-uhd
+        path: /mnt
+        mountPath: /data
