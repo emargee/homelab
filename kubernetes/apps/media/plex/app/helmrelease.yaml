@@ -67,6 +67,12 @@ spec:
         server: &nas "${NAS}"
         path: /mnt
         mountPath: /data
+      uhd:
+        enabled: true
+        type: nfs
+        server: *nas
+        path: /mnt/uhd-tv
+        mountPath: /data-uhd
       transcode:
         enabled: true
         type: emptyDir
