@@ -1,0 +1,17 @@
+
+
+update metadata_items set added_at = originally_available_at where originally_available_at is not null and library_section_id = 1;
+
+select * from metadata_items where added_at >= date('now');
+
+select * from metadata_items where originally_available_at IS NULL and library_section_id = 1 and title like '%season%';
+
+select * from metadata_items where originally_available_at IS NULL and library_section_id = 1 and title like '%season 7%' and parent_id = 42;
+
+update metadata_items set added_at = 1270425600 where originally_available_at IS NULL and library_section_id = 1 and title like '%season%' and parent_id = 42;
+
+select id,title,available_at,originally_available_at,added_at,created_at,updated_at,changed_at from metadata_items where title like '%wonderful world%';
+
+select id,title from metadata_items where added_at >= strftime('%s','now');
+
+

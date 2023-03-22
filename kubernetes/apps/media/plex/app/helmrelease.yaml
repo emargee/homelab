@@ -71,7 +71,7 @@ spec:
         enabled: true
         type: nfs
         server: *nas
-        path: /mnt/uhd-tv
+        path: /mnt/uhd-tv-1
         mountPath: /data-uhd
       transcode:
         enabled: true
