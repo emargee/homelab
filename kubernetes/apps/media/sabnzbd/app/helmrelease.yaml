@@ -63,6 +63,12 @@ spec:
         server: &nas "${NAS}"
         path: /mnt
         mountPath: /data
+      backup:
+        enabled: true
+        type: nfs
+        server: *nas
+        path: /mnt/data/backup/kubernetes/apps/sabnzbd
+        mountPath: /backup
       incomplete:
         enabled: true
         type: emptyDir
