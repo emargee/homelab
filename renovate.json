@@ -23,16 +23,14 @@
       "requiredStatusChecks": null,
       "matchUpdateTypes": ["minor", "patch", "digest"],
       "matchPackageNames": [
-        "ghcr.io/onedr0p/plex-beta",
-        "ghcr.io/onedr0p/sonarr-develop",
-        "ghcr.io/onedr0p/prowlarr-nightly",
-        "ghcr.io/onedr0p/sabnzbd",
-        "ghcr.io/onedr0p/radarr-develop",
         "ghcr.io/sct/overseerr",
         "renovatebot/github-action",
         "kubernetes-dashboard",
         "registry.k8s.io/metrics-server/metrics-server",
         "redis"
+      ],
+      "matchPackagePattern": [
+        "ghcr.io/onedr0p"
       ]
     }
   ]
