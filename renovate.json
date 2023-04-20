@@ -24,7 +24,7 @@
       "matchUpdateTypes": ["minor", "patch", "digest"],
       "matchDatasources": [
         "docker"
-      ]
+      ],
       "matchPackageNames": [
         "ghcr.io/sct/overseerr",
         "renovatebot/github-action",
