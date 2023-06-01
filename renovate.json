@@ -23,7 +23,8 @@
       "requiredStatusChecks": null,
       "matchUpdateTypes": ["minor", "patch", "digest"],
       "matchDatasources": [
-        "docker"
+        "docker",
+        "helm"
       ],
       "matchPackageNames": [
         "ghcr.io/sct/overseerr",
