@@ -30,7 +30,11 @@
         "renovatebot/github-action",
         "kubernetes-dashboard",
         "registry.k8s.io/metrics-server/metrics-server",
-        "redis"
+        "redis",
+        "node-feature-discovery",
+        "csi-driver-nfs",
+        "metallb",
+        "kubelet-csr-approver"
       ],
       "matchPackagePatterns": [
         "ghcr.io/onedr0p"
