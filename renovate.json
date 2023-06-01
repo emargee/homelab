@@ -33,7 +33,6 @@
         "registry.k8s.io/metrics-server/metrics-server",
         "redis",
         "node-feature-discovery",
-        "csi-driver-nfs",
         "metallb",
         "kubelet-csr-approver"
       ],
