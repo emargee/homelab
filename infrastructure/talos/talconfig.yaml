@@ -1,6 +1,6 @@
 clusterName: onepiece
-talosVersion: v1.3.6
-kubernetesVersion: v1.26.3
+talosVersion: v1.4.4
+kubernetesVersion: v1.27.2
 endpoint: https://onepiece.home.local:6443
 allowSchedulingOnMasters: true
 cniConfig:
@@ -80,7 +80,7 @@ controlPlane:
       - op: add
         path: /machine/kubelet/extraArgs
         value:
-          feature-gates: MixedProtocolLBService=true,EphemeralContainers=True
+          feature-gates: CronJobTimeZone=true,GracefulNodeShutdown=true
           rotate-server-certificates: "true"
     - |-
       machine:
@@ -94,5 +94,5 @@ worker:
       - op: add
         path: /machine/kubelet/extraArgs
         value:
-          feature-gates: MixedProtocolLBService=true,EphemeralContainers=True
+          feature-gates: CronJobTimeZone=true,GracefulNodeShutdown=true
           rotate-server-certificates: "true"
