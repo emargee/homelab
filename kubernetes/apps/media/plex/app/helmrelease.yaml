@@ -24,7 +24,7 @@ spec:
   values:
     image:
       repository: ghcr.io/onedr0p/plex-beta
-      tag: rolling@sha256:a811d8e2ef32455f0d8966a034c0fc44b44f0f6c47bad7e8a304416a5ea0ba67
+      tag: rolling@sha256:2d3fc365230c6d9975d64cfe1302d59eea065087c6702975d087c93b8849b8a3
     env:
       TZ: "Europe/London"
       ADVERTISE_IP: "${LB_PLEX}"
