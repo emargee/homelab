@@ -34,7 +34,8 @@
         "redis",
         "node-feature-discovery",
         "metallb",
-        "kubelet-csr-approver"
+        "kubelet-csr-approver",
+        "kizaing/kavita"
       ],
       "matchPackagePatterns": [
         "ghcr.io/onedr0p"
