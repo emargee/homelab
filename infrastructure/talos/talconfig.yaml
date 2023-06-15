@@ -1,5 +1,5 @@
 clusterName: onepiece
-talosVersion: v1.4.4
+talosVersion: v1.4.5
 kubernetesVersion: v1.27.2
 endpoint: https://onepiece.home.local:6443
 allowSchedulingOnMasters: true
