@@ -10,7 +10,7 @@ resources:
   - ./cloudnative-pg.yaml
   # - ./external-dns-charts.yaml
   - ./fairwinds-charts.yaml
-  # - ./grafana-charts.yaml
+  - ./grafana-charts.yaml
   - ./hajimari-charts.yaml
   # - ./infracloudio-charts.yaml
   # - ./ingress-nginx-charts.yaml
@@ -23,7 +23,7 @@ resources:
   # - ./kyverno-charts.yaml
   - ./metallb-charts.yaml
   - ./nfs-csi-charts.yaml
-  # - ./prometheus-community-charts.yaml
+  - ./prometheus-community-charts.yaml
   - ./rook-ceph-charts.yaml
   # - ./stakater-charts.yaml
   # - ./vector-charts.yaml
