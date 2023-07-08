@@ -27,23 +27,26 @@ spec:
   uninstall:
     keepHistory: false
   values:
-    env:
-      TZ: Europe/London
-    extraArgs:
-      - --enable-skip-login
-      - --disable-settings-authorizer
-      - --enable-insecure-login
-      - --token-ttl=43200
-    protocolHttp: true
-    service:
-      externalPort: 80
-    ingress:
-      enabled: true
-      annotations:
-        hajimari.io/icon: mdi:kubernetes
-        kubernetes.io/ingress.class: haproxy
-      hosts:
-        - &host dashboard.${INTERNAL_DOMAIN}
+    web:
+      env:
+        TZ: Europe/London
+      extraArgs:
+        - --enable-skip-login
+        - --disable-settings-authorizer
+        - --enable-insecure-login
+        - --token-ttl=43200
+      protocolHttp: true
+      service:
+        externalPort: 80
+    app:
+      ingress:
+        enabled: true
+        ingressClassName: ""
+        annotations:
+          hajimari.io/icon: mdi:kubernetes
+          kubernetes.io/ingress.class: haproxy
+        hosts:
+          - &host dashboard.${INTERNAL_DOMAIN}
     metricsScraper:
       enabled: true
     serviceMonitor:
