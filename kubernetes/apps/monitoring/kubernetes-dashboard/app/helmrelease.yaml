@@ -40,7 +40,6 @@ spec:
         externalPort: 80
     app:
       ingress:
-        enabled: true
         annotations:
           hajimari.io/icon: mdi:kubernetes
           kubernetes.io/ingress.class: haproxy
