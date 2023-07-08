@@ -27,17 +27,15 @@ spec:
   uninstall:
     keepHistory: false
   values:
-    web:
-      env:
-        TZ: Europe/London
+    api:
       args:
         - --enable-skip-login
         - --disable-settings-authorizer
         - --enable-insecure-login
         - --token-ttl=43200
-      protocolHttp: true
-      service:
-        externalPort: 80
+    web:
+      env:
+        TZ: Europe/London
     app:
       ingress:
         ingressClassName: haproxy
