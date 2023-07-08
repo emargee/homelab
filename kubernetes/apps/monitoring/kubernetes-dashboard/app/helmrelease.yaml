@@ -30,7 +30,7 @@ spec:
     web:
       env:
         TZ: Europe/London
-      extraArgs:
+      args:
         - --enable-skip-login
         - --disable-settings-authorizer
         - --enable-insecure-login
