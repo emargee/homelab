@@ -24,15 +24,19 @@ spec:
       retries: 5
   values:
     controller:
-      replicas: 3
+      replicas: 1
       strategy: RollingUpdate
     fullNameOverride: *app
     image:
       repository: ghcr.io/auricom/libreddit
       tag: 0.30.1@sha256:58108c7aaf963cd7903c0e35f6af041f9ed77fdf8bd7019f79b9a989846ee97a
     env:
-      LIBREDDIT_DEFAULT_SHOW_NSFW: true
-      LIBREDDIT_DEFAULT_WIDE: true
+      LIBREDDIT_DEFAULT_SHOW_NSFW: "on"
+      LIBREDDIT_DEFAULT_WIDE: "on"
+      LIBREDDIT_DEFAULT_USE_HLS: "on"
+      LIBREDDIT_DEFAULT_FRONT_PAGE: "all"
+      LIBREDDIT_DEFAULT_HIDE_AWARDS: "on"
+      LIBREDDIT_DEFAULT_THEME: "dracula"
     service:
       main:
         ports:
