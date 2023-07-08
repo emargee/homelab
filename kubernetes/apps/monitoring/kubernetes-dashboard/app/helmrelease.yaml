@@ -49,7 +49,7 @@ spec:
       enabled: true
     serviceMonitor:
       enabled: false
-    nginx:
+    nginx-ingress:
       enabled: false
     cert-manager:
       enabled: false
