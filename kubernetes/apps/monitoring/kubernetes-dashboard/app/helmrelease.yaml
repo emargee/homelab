@@ -45,8 +45,6 @@ spec:
           - &host dashboard.${INTERNAL_DOMAIN}
     metricsScraper:
       enabled: true
-    serviceMonitor:
-      enabled: false
     nginx-ingress:
       enabled: false
     cert-manager:
