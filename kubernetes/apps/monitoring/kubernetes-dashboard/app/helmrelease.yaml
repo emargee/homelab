@@ -40,9 +40,9 @@ spec:
         externalPort: 80
     app:
       ingress:
+        ingressClassName: haproxy
         annotations:
           hajimari.io/icon: mdi:kubernetes
-          kubernetes.io/ingress.class: haproxy
         hosts:
           - &host dashboard.${INTERNAL_DOMAIN}
     metricsScraper:
