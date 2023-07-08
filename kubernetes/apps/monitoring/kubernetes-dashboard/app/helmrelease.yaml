@@ -41,7 +41,6 @@ spec:
     app:
       ingress:
         enabled: true
-        ingressClassName: ""
         annotations:
           hajimari.io/icon: mdi:kubernetes
           kubernetes.io/ingress.class: haproxy
