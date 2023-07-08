@@ -28,11 +28,12 @@ spec:
     keepHistory: false
   values:
     api:
-      args:
-        - --enable-skip-login
-        - --disable-settings-authorizer
-        - --enable-insecure-login
-        - --token-ttl=43200
+      containers:
+        args:
+          - --enable-skip-login
+          - --disable-settings-authorizer
+          - --enable-insecure-login
+          - --token-ttl=43200
     web:
       env:
         TZ: Europe/London
