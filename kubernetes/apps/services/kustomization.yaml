@@ -6,4 +6,4 @@ resources:
   - ./namespace.yaml
   - ./hajimari/ks.yaml
   - ./libreddit/ks.yaml
-  - ./flaresolverr/ks.yaml
+  - ./flaresolver/ks.yaml

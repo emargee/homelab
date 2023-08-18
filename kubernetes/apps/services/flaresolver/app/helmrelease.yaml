@@ -2,7 +2,7 @@
 apiVersion: helm.toolkit.fluxcd.io/v2beta1
 kind: HelmRelease
 metadata:
-  name: &app flaresolverr
+  name: &app flaresolver
   namespace: services
 spec:
   interval: 15m
@@ -41,7 +41,7 @@ spec:
           hajimari.io/icon: mdi:eye-circle
           kubernetes.io/ingress.class: haproxy
         hosts:
-          - host: "flare.${INTERNAL_DOMAIN}"
+          - host: &host "flare.${INTERNAL_DOMAIN}"
             paths:
               - path: /
                 pathType: Prefix
