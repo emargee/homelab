@@ -38,10 +38,10 @@ spec:
       main:
         enabled: true
         annotations:
-          hajimari.io/icon: simple-icons:reddit
+          hajimari.io/icon: mdi:eye-circle
           kubernetes.io/ingress.class: haproxy
         hosts:
-          - host: 'flare.${INTERNAL_DOMAIN}'
+          - host: "flare.${INTERNAL_DOMAIN}"
             paths:
               - path: /
                 pathType: Prefix
