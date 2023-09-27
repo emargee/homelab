@@ -27,13 +27,13 @@ spec:
       tag: rolling@sha256:a9474ff865f654cee7069357ce52469ab2929abdc1133568ba07b5fe83d09e9f
     env:
       TZ: "Europe/London"
-      ADVERTISE_IP: "192.168.2.20"
+      ADVERTISE_IP: "${LB_PLEX}"
       ALLOWED_NETWORKS: "192.168.0.0/16"
     service:
       main:
         type: LoadBalancer
         externalTrafficPolicy: Local
-        loadBalancerIP: "192.168.2.20"
+        loadBalancerIP: "${LB_PLEX}"
         ports:
           http:
             port: &port 32400
@@ -64,7 +64,7 @@ spec:
       media:
         enabled: true
         type: nfs
-        server: &nas "192.168.1.94"
+        server: &nas "${NAS}"
         path: /mnt
         mountPath: /data
       uhd:

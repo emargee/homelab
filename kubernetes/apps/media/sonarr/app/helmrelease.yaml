@@ -64,6 +64,6 @@ spec:
       media:
         enabled: true
         type: nfs
-        server: &nas "192.168.1.94"
+        server: &nas "${NAS}"
         path: /mnt
         mountPath: /data

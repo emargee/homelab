@@ -23,7 +23,7 @@ spec:
   values:
     controller:
       service:
-        loadBalancerIP: "192.168.2.10"
+        loadBalancerIP: ${LB_HAPROXY}
         externalTrafficPolicy: Local
       publishService:
         enabled: true
