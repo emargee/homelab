@@ -6,7 +6,7 @@ metadata:
   namespace: kube-system
 provisioner: nfs.csi.k8s.io
 parameters:
-  server: "${NAS}"
+  server: "192.168.1.94"
   share: "/mnt/data/backup"
 reclaimPolicy: Delete
 volumeBindingMode: Immediate

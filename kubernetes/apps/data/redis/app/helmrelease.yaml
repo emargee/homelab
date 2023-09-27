@@ -33,7 +33,7 @@ spec:
         size: 500M
       service:
         type: "LoadBalancer"
-        loadBalancerIP: ${LB_REDIS}
+        loadBalancerIP: "192.168.2.40"
     architecture: "standalone"
     sentinel:
       enabled: false

@@ -6,5 +6,5 @@ metadata:
   namespace: networking
 spec:
   addresses:
-    - ${LB_RANGE}
+    - 192.168.2.1-192.168.2.250
   autoAssign: true

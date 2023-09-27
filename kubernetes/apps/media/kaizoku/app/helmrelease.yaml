@@ -32,11 +32,11 @@ spec:
     env:
       TZ: "Europe/London"
       KAIZOKU_PORT: 3000
-      REDIS_HOST: ${LB_REDIS}
+      REDIS_HOST: 192.168.2.40
       REDIS_PORT: 6379
       PUID: 1000
       PGID: 1000
-      DATABASE_URL: "postgresql://${SECRET_POSTGRES_APPUSER}:${SECRET_POSTGRES_APPUSERPASS}@${LB_POSTGRES}:5432/application"
+      DATABASE_URL: "postgresql://${SECRET_POSTGRES_APPUSER}:${SECRET_POSTGRES_APPUSERPASS}@192.168.2.30:5432/application"
     service:
       main:
         ports:
@@ -60,6 +60,6 @@ spec:
       manga:
         enabled: true
         type: nfs
-        server: &nas "${NAS}"
+        server: &nas "192.168.1.94"
         path: /mnt/data/manga
         mountPath: /data/manga
