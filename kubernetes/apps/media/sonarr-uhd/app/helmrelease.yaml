@@ -32,7 +32,7 @@ spec:
     env:
       TZ: "Europe/London"
       SONARR__INSTANCE_NAME: Sonarr-UHD
-      SONARR__APPLICATION_URL: 'http://sonarr-uhd.${INTERNAL_DOMAIN}'
+      SONARR__APPLICATION_URL: 'http://sonarr-uhd.home.local'
       SONARR__LOG_LEVEL: info
     service:
       main:
@@ -46,7 +46,7 @@ spec:
           kubernetes.io/ingress.class: haproxy
           hajimari.io/icon: mdi:television-classic
         hosts:
-          - host: 'sonarr-uhd.${INTERNAL_DOMAIN}'
+          - host: 'sonarr-uhd.home.local'
             paths:
               - path: /
                 pathType: Prefix

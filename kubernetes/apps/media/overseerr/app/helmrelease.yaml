@@ -43,7 +43,7 @@ spec:
           hajimari.io/icon: mdi:eye-circle
           kubernetes.io/ingress.class: haproxy
         hosts:
-          - host: &host "request.${INTERNAL_DOMAIN}"
+          - host: &host "request.home.local"
             paths:
               - path: /
                 pathType: Prefix

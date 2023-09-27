@@ -88,9 +88,9 @@ spec:
         enabled: true
         annotations:
           kubernetes.io/ingress.class: haproxy
-        host: "minio.${INTERNAL_DOMAIN}"
+        host: "minio.home.local"
       console:
         enabled: true
         annotations:
           kubernetes.io/ingress.class: haproxy
-        host: "minio-console.${INTERNAL_DOMAIN}"
+        host: "minio-console.home.local"

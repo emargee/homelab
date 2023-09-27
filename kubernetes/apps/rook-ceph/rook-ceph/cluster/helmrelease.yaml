@@ -63,7 +63,7 @@ spec:
           hajimari.io/icon: mdi:chess-rook
           kubernetes.io/ingress.class: haproxy
         host:
-          name: &host "rook.${INTERNAL_DOMAIN}"
+          name: &host "rook.home.local"
           path: "/"
     cephBlockPoolsVolumeSnapshotClass:
       enabled: false

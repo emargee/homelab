@@ -32,7 +32,7 @@ spec:
     env:
       TZ: "Europe/London"
       RADARR__INSTANCE_NAME: Radarr
-      RADARR__APPLICATION_URL: 'http://radarr.${INTERNAL_DOMAIN}'
+      RADARR__APPLICATION_URL: 'http://radarr.home.local'
       RADARR__LOG_LEVEL: info
     service:
       main:
@@ -46,7 +46,7 @@ spec:
           kubernetes.io/ingress.class: haproxy
           hajimari.io/icon: mdi:television-classic
         hosts:
-          - host: 'radarr.${INTERNAL_DOMAIN}'
+          - host: 'radarr.home.local'
             paths:
               - path: /
                 pathType: Prefix

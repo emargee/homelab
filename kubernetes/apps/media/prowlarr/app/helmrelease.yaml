@@ -45,7 +45,7 @@ spec:
           kubernetes.io/ingress.class: haproxy
           hajimari.io/icon: mdi:movie-search
         hosts:
-          - host: &host 'prowlarr.${INTERNAL_DOMAIN}'
+          - host: &host 'prowlarr.home.local'
             paths:
               - path: /
                 pathType: Prefix

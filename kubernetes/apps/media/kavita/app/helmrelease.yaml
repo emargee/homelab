@@ -40,7 +40,7 @@ spec:
           kubernetes.io/ingress.class: haproxy
           hajimari.io/icon: "notebook-heart"
         hosts:
-          - host: &host "manga.${INTERNAL_DOMAIN}"
+          - host: &host "manga.home.local"
             paths:
               - path: /
                 pathType: Prefix
