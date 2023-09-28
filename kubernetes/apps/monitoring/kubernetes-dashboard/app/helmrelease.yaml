@@ -34,13 +34,16 @@ spec:
       - --disable-settings-authorizer
       - --enable-insecure-login
       - --token-ttl=43200
+    protocolHttp: true
+    service:
+      externalPort: 80
     ingress:
       enabled: true
-      className: haproxy
       annotations:
         hajimari.io/icon: mdi:kubernetes
+        kubernetes.io/ingress.class: haproxy
       hosts:
-        - &host dashboard.home.local
+        - &host dashboard.${INTERNAL_DOMAIN}
     metricsScraper:
       enabled: true
     serviceMonitor:
