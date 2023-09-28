@@ -27,6 +27,13 @@ spec:
   uninstall:
     keepHistory: false
   values:
+    env:
+        TZ: Europe/London
+    extraArgs:
+      - --enable-skip-login
+      - --disable-settings-authorizer
+      - --enable-insecure-login
+      - --token-ttl=43200
     api:
       containers:
         args:
@@ -39,7 +46,9 @@ spec:
         TZ: Europe/London
     app:
       ingress:
+        enabled: true
         ingressClassName: haproxy
+        className: haproxy
         annotations:
           hajimari.io/icon: mdi:kubernetes
         hosts:
