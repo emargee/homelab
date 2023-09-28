@@ -28,35 +28,20 @@ spec:
     keepHistory: false
   values:
     env:
-        TZ: Europe/London
+      TZ: Europe/London
     extraArgs:
       - --enable-skip-login
       - --disable-settings-authorizer
       - --enable-insecure-login
       - --token-ttl=43200
-    api:
-      containers:
-        args:
-          - --enable-skip-login
-          - --disable-settings-authorizer
-          - --enable-insecure-login
-          - --token-ttl=43200
-    web:
-      env:
-        TZ: Europe/London
-    app:
-      ingress:
-        enabled: true
-        ingressClassName: haproxy
-        className: haproxy
-        annotations:
-          hajimari.io/icon: mdi:kubernetes
-        hosts:
-          - &host dashboard.home.local
+    ingress:
+      enabled: true
+      className: haproxy
+      annotations:
+        hajimari.io/icon: mdi:kubernetes
+      hosts:
+        - &host dashboard.home.local
     metricsScraper:
       enabled: true
-    nginx-ingress:
+    serviceMonitor:
       enabled: false
-    cert-manager:
-      enabled: false
-      installCRDs: false
