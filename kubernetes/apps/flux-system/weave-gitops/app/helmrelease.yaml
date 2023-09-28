@@ -57,7 +57,7 @@ spec:
         hajimari.io/icon: mdi:sawtooth-wave
         kubernetes.io/ingress.class: haproxy
       hosts:
-        - host: &host 'weave.home.local'
+        - host: &host 'weave.${INTERNAL_DOMAIN}'
           paths:
             - path: /
               pathType: Prefix

@@ -29,7 +29,7 @@ spec:
     env:
       TZ: "Europe/London"
       SABNZBD__HOST_WHITELIST_ENTRIES: >-
-        sabnzbd, sabnzbd.media, sabnzbd.media.svc, sabnzbd.media.svc.cluster, sabnzbd.media.svc.cluster.local, sabnzbd.home.local
+        sabnzbd, sabnzbd.media, sabnzbd.media.svc, sabnzbd.media.svc.cluster, sabnzbd.media.svc.cluster.local, sabnzbd.${INTERNAL_DOMAIN}
     service:
       main:
         ports:
@@ -42,7 +42,7 @@ spec:
           kubernetes.io/ingress.class: haproxy
           hajimari.io/icon: mdi:download
         hosts:
-          - host: &host "sabnzbd.home.local"
+          - host: &host "sabnzbd.${INTERNAL_DOMAIN}"
             paths:
               - path: /
                 pathType: Prefix

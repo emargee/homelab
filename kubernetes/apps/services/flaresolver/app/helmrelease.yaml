@@ -41,7 +41,7 @@ spec:
           hajimari.io/icon: mdi:eye-circle
           kubernetes.io/ingress.class: haproxy
         hosts:
-          - host: &host "flare.home.local"
+          - host: &host "flare.${INTERNAL_DOMAIN}"
             paths:
               - path: /
                 pathType: Prefix

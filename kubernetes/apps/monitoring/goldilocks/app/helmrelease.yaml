@@ -49,7 +49,7 @@ spec:
           hajimari.io/icon: mdi:align-vertical-top
           kubernetes.io/ingress.class: haproxy
         hosts:
-          - host: &host "goldilocks.home.local"
+          - host: &host "goldilocks.${INTERNAL_DOMAIN}"
             paths:
               - path: /
                 type: Prefix

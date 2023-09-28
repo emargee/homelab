@@ -44,7 +44,7 @@ spec:
           hajimari.io/icon: mdi:plex
           kubernetes.io/ingress.class: haproxy
         hosts:
-          - host: &host "plex.home.local"
+          - host: &host "plex.${INTERNAL_DOMAIN}"
             paths:
               - path: /
                 pathType: Prefix

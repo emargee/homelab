@@ -74,7 +74,7 @@ spec:
           hajimari.io/enable: "false"
           kubernetes.io/ingress.class: haproxy
         hosts:
-          - host: 'index.home.local'
+          - host: 'index.${INTERNAL_DOMAIN}'
             paths:
               - path: /
                 pathType: Prefix
