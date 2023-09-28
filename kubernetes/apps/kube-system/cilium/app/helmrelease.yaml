@@ -64,5 +64,5 @@ spec:
             hajimari.io/appName: hubble
             hajimari.io/icon: lan
           hosts:
-            - &host "hubble.home.local"
+            - &host "hubble.${INTERNAL_DOMAIN}"
 
