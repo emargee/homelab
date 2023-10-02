@@ -28,6 +28,7 @@
       ],
       "matchPackageNames": [
         "ghcr.io/sct/overseerr",
+        "ghcr.io/auricom/libreddit",
         "renovatebot/github-action",
         "kubernetes-dashboard",
         "registry.k8s.io/metrics-server/metrics-server",
