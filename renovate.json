@@ -33,7 +33,6 @@
         "kubernetes-dashboard",
         "registry.k8s.io/metrics-server/metrics-server",
         "redis",
-        "node-feature-discovery",
         "metallb",
         "kubelet-csr-approver",
         "kizaing/kavita"
