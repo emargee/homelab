@@ -10,7 +10,7 @@ spec:
   chart:
     spec:
       chart: haproxy-ingress
-      version: 0.14.6
+      version: 0.15.1
       sourceRef:
         kind: HelmRepository
         name: haproxy-charts
